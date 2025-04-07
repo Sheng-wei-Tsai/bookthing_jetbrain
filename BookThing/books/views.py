@@ -1,3 +1,4 @@
+import time
 from books.models import Book
 from django.shortcuts import render
 
@@ -8,3 +9,11 @@ def home(request):
     }
 
     return render(request, "home.html", data)
+
+def lazy_page(request):
+    return render(request, "lazy.html")
+
+
+def lazy_image(request):
+    time.sleep(3)
+    return render(request, "snippets/lazy_image.html")
