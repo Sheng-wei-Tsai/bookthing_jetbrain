@@ -1,0 +1,31 @@
+output_dir = 'steps'
+src_dir = 'BookThing'
+chapter_prefix = 'step'
+skip_dirs = ['htmlcov']
+skip_patterns = [
+    '__pycache__', '.swp', 'db.sqlite3', 'runtests.sh', 'req_dev.txt',
+    'pyflakes.sh',
+]
+pound_globs = ['**/*.py', '**/requirements.txt' ]
+delete_output = true
+black = true
+isort = true
+
+[ranged_files.2]
+range = '2-'
+files = [
+    'BookThing/templates/snippets/',
+    'BookThing/templates/lazy.html',
+]
+
+[ranged_files.3]
+range = '3-'
+files = [
+    'BookThing/templates/search.html',
+]
+
+[ranged_files.4]
+range = '4-'
+files = [
+    'BookThing/templates/snippets/search_results.html',
+]
