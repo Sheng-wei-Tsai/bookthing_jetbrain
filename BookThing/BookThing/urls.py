@@ -7,4 +7,5 @@ urlpatterns = [
     path("", book_views.home, name="home"),
     path("lazy/", book_views.lazy_page, name="lazy_page"),
     path("lazy_image/", book_views.lazy_image, name="lazy_image"),
+    path("search/", book_views.search, name="search"),
 ]

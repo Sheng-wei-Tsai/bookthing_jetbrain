@@ -1,0 +1,16 @@
+{% for book in books %}
+<div class="row mb-4">
+  <div class="col-2">
+    <img src="{% static book.image %}" style="height: 100px ; width: auto">
+  </div>
+  <div class="col">
+    <i>{{book.title}}</i> ({{book.last_name}}, {{book.first_name}})
+  </div>
+</div>
+{% empty %}
+<p class="text-muted"> No matching books</p>
+{% endfor %}
+
+{% if has_more %}
+<a href="{% url 'search' %}?page={{next_page}}&search_text={{search_text}}" class="btn btn-primary"> More </a>
+{% endif %}
