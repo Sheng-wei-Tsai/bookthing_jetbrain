@@ -57,7 +57,9 @@ def search(request):
     }
 
     # if it's an htmx request, return only the search results
-    if request.headers.get('HX-Request'):
+    if request.htmx:
+        if page_number > 1:
+           time.sleep(2)
         return render(request, "snippets/search_results.html", data)
 
     return render(request, "search.html", data)
